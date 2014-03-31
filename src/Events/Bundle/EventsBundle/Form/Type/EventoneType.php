@@ -55,7 +55,7 @@ class EventoneType extends AbstractType {
        //Eventtype1
         $builder->add('eventtype1','choice',array(
             'choices' => array('1' => 'Ethiopian Food(P10)', 
-                               '2' => 'Peruvian Food(IP12B)',
+                               '2' => 'Ecuadorian Food(IP12B)',
                                '3' => 'South Korean Food(P03)',
                                '4' => 'Serbian Food(P04)'),
             'expanded' => true,
@@ -86,7 +86,7 @@ class EventoneType extends AbstractType {
             'choices' => array('10' => 'Game Bamboo Dance(P10)', 
                                '11' => 'Painting on Eggs(IP12B)',
                                '12' => 'Nigerian Music(P04)',
-                               '13' => 'Story Telling(P03)',
+                               '13' => 'Ecuador Story Telling(P03)',
                                '14'=> 'Bingo Mexicano(P05)'),
             'expanded' => true,
             'multiple' => false,
