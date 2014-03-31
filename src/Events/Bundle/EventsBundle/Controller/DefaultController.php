@@ -428,7 +428,6 @@ class DefaultController extends Controller {
         $em = $this->getDoctrine()->getEntityManager();
         $query = $em->createQuery('SELECT s FROM Events\Bundle\EventsBundle\Entity\Subscribed s');
         $data = $query->getResult();
-        $content = '';
         $response = new Response($content);
         $response->headers->set('Content-Type', 'application/vnd.ms-excel');
         $response->headers->set('Content-Disposition', 'attachment; filename='.$filename);
