@@ -20,19 +20,7 @@ class DefaultController extends Controller {
      * @Template()
      */
     public function indexAction() {
-        
-        $message = \Swift_Message::newInstance()
-        ->setSubject('Hello Email')
-        ->setFrom('epitaevents2014@gmail.com')
-        ->setTo('mbilosha@gmail.com')
-        ->setBody(
-            $this->renderView(
-                'EventsEventsBundle:Default:thursdaymail.html.twig',
-                array('name' => 'Hello')
-            )
-        )
-    ;
-    $this->get('mailer')->send($message);
+       
         if ($this->get('security.context')->isGranted('ROLE_USER')) {
             return $this->redirect($this->generateUrl('securedhome'));
         }
@@ -238,6 +226,7 @@ class DefaultController extends Controller {
                 $subscribed->setEventtype3($eventtype3);
                 $subscribed->setEventtype4($eventtype4);
                 $em->persist($subscribed);                
+                $copy = $subscribed;
             }     
             else {
                $sub->setEventtype1($eventtype1);
@@ -245,14 +234,24 @@ class DefaultController extends Controller {
                $sub->setEventtype3($eventtype3);
                $sub->setEventtype4($eventtype4);
                $em->persist($sub);
+               $copy = $sub;
             }            
              $em->flush();
              $route = 'securedhome';
              $url = $this->generateUrl($route);
              $this->container->get('session')->getFlashBag()->add('success', 'We have your registrations for the events on Thursday. Thank you!');
+                          $message = \Swift_Message::newInstance()
+                        ->setSubject('EPITA International - Your Registrations for Thursday, 3rd April 2014')
+                        ->setFrom('epitaevents2014@gmail.com')
+                        ->setTo($user->getEmailCanonical())
+                        ->setContentType("text/html")
+                        ->setBody(
+                        $this->renderView('EventsEventsBundle:Default:thursdaymail.html.twig',array('row' => $copy)
+            ));
+             $this->get('mailer')->send($message);
              return $this->redirect($url);
-        }
-
+        }      
+        
         return array('form' => $form->createView());
     }
     
@@ -408,6 +407,7 @@ class DefaultController extends Controller {
                 $subscribed->setEventtype7($eventtype7);
                 $subscribed->setEventtype8($eventtype8);
                 $em->persist($subscribed);                
+                $copy = $subscribed;
             }     
             else {
                $sub->setEventtype5($eventtype5);
@@ -415,11 +415,21 @@ class DefaultController extends Controller {
                $sub->setEventtype7($eventtype7);
                $sub->setEventtype8($eventtype8);
                $em->persist($sub);
+               $copy = $sub;
             }            
              $em->flush();
              $route = 'securedhome';
              $url = $this->generateUrl($route);
              $this->container->get('session')->getFlashBag()->add('success', 'We have your registrations for the events on Friday. Thank you!');
+                        $message = \Swift_Message::newInstance()
+                        ->setSubject('EPITA International - Your Registrations for Friday, 4th April 2014')
+                        ->setFrom('epitaevents2014@gmail.com')
+                        ->setTo($user->getEmailCanonical())
+                        ->setContentType("text/html")
+                        ->setBody(
+                        $this->renderView('EventsEventsBundle:Default:fridaymail.html.twig',array('row' => $copy)
+            ));
+             $this->get('mailer')->send($message);
              return $this->redirect($url);
         }
 
