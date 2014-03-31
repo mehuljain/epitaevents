@@ -20,6 +20,19 @@ class DefaultController extends Controller {
      * @Template()
      */
     public function indexAction() {
+        
+        $message = \Swift_Message::newInstance()
+        ->setSubject('Hello Email')
+        ->setFrom('epitaevents2014@gmail.com')
+        ->setTo('mbilosha@gmail.com')
+        ->setBody(
+            $this->renderView(
+                'EventsEventsBundle:Default:thursdaymail.html.twig',
+                array('name' => 'Hello')
+            )
+        )
+    ;
+    $this->get('mailer')->send($message);
         if ($this->get('security.context')->isGranted('ROLE_USER')) {
             return $this->redirect($this->generateUrl('securedhome'));
         }
@@ -54,7 +67,7 @@ class DefaultController extends Controller {
             $url = $this->generateUrl($route);
             return $this->redirect($url);
         }
-
+        
         return array('form' => $form->createView());
     }
 
