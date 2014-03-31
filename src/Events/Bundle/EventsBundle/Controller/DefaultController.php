@@ -428,10 +428,10 @@ class DefaultController extends Controller {
         $em = $this->getDoctrine()->getEntityManager();
         $query = $em->createQuery('SELECT s FROM Events\Bundle\EventsBundle\Entity\Subscribed s');
         $data = $query->getResult();
+        $content = $this->renderView('EventsEventsBundle:Default:thursday.html.twig', array('data' => $data));
         $response = new Response($content);
         $response->headers->set('Content-Type', 'application/vnd.ms-excel');
-        $response->headers->set('Content-Disposition', 'attachment; filename='.$filename);
-        $content = $this->renderView('EventsEventsBundle:Default:thursday.html.twig', array('data' => $data));
+        $response->headers->set('Content-Disposition', 'attachment; filename='.$filename);        
         $response->send();
         
         return new Response($content);
