@@ -74,4 +74,4 @@ swiftmailer:
     spool:     { type: memory }
     
 parameters:
-    maximum_participants : 5
+    maximum_participants : 40
