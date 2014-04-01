@@ -102,10 +102,31 @@ class DefaultController extends Controller {
 //        if(is_a($subrecord, 'Subscribed')){
         if(!empty($subrecord)){
             $exists = true;
-            $event1 = $subrecord->getEventtype1()->getId();
-            $event2 = $subrecord->getEventtype1()->getId();
-            $event3 = $subrecord->getEventtype1()->getId();
-            $event4 = $subrecord->getEventtype1()->getId();
+            if($subrecord->getEventtype1() != null || $subrecord->getEventtype1() != '' ){
+                $event1 = $subrecord->getEventtype1()->getId();
+            }
+            else {
+                $event1 = '';
+            }
+            if(($subrecord->getEventtype2() != null || $subrecord->getEventtype2() != '')){
+                $event2 = $subrecord->getEventtype2()->getId();
+            }
+            else {
+                $event2 = '';
+            }
+            if(($subrecord->getEventtype3() != null || $subrecord->getEventtype3() != '')){
+                $event3 = $subrecord->getEventtype3()->getId();
+            }
+            else {
+                $event3 = '';
+            }
+            if(($subrecord->getEventtype4() != null || $subrecord->getEventtype4() != '' )){
+                $event4 = $subrecord->getEventtype4()->getId();
+            }
+            else {
+                $event4 = '';
+            }
+            
         }
         
         $subscribed = new Subscribed();
@@ -286,11 +307,31 @@ class DefaultController extends Controller {
         
 //        if(is_a($subrecord, 'Subscribed')){
         if(!empty($subrecord)){
-            $exists = true;
-            $event5 = $subrecord->getEventtype5()->getId();
-            $event6 = $subrecord->getEventtype6()->getId();
-            $event7 = $subrecord->getEventtype7()->getId();
-            $event8 = $subrecord->getEventtype8()->getId();
+   $exists = true;
+            if($subrecord->getEventtype5() != null || $subrecord->getEventtype5() != '' ){
+                $event5 = $subrecord->getEventtype5()->getId();
+            }
+            else {
+                $event5 = '';
+            }
+            if(($subrecord->getEventtype6() != null || $subrecord->getEventtype6() != '')){
+                $event6 = $subrecord->getEventtype6()->getId();
+            }
+            else {
+                $event6 = '';
+            }
+            if(($subrecord->getEventtype7() != null || $subrecord->getEventtype7() != '')){
+                $event7 = $subrecord->getEventtype7()->getId();
+            }
+            else {
+                $event7 = '';
+            }
+            if(($subrecord->getEventtype8() != null || $subrecord->getEventtype8() != '' )){
+                $event8 = $subrecord->getEventtype8()->getId();
+            }
+            else {
+                $event8 = '';
+            }
         }
         
         $subscribed = new Subscribed();
