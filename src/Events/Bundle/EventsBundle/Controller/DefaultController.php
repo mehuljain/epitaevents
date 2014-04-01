@@ -99,7 +99,8 @@ class DefaultController extends Controller {
         
         $subrecord = $em->getRepository('EventsEventsBundle:Subscribed')->findOneBy(array('user' => $user->getId()));
         
-        if(is_a($subrecord, 'Subscribed')){
+//        if(is_a($subrecord, 'Subscribed')){
+        if(!empty($subrecord)){
             $exists = true;
             $event1 = $subrecord->getEventtype1()->getId();
             $event2 = $subrecord->getEventtype1()->getId();
@@ -132,8 +133,8 @@ class DefaultController extends Controller {
             $qb1->where('subscribed.eventtype1 = :bar');
             $qb1->setParameter('bar', $subscribed->getEventtype1());
 
-            $total1 = $qb1->getQuery()->getSingleScalarResult();            
-            
+            $total1 = $qb1->getQuery()->getSingleScalarResult();  
+                        
             if($exists){
                 if($event1 != $subscribed->getEventtype1()){
                     if ($total1 > $max || $total1 == $max ) {
@@ -283,7 +284,8 @@ class DefaultController extends Controller {
         
         $subrecord = $em->getRepository('EventsEventsBundle:Subscribed')->findOneBy(array('user' => $user->getId()));
         
-        if(is_a($subrecord, 'Subscribed')){
+//        if(is_a($subrecord, 'Subscribed')){
+        if(!empty($subrecord)){
             $exists = true;
             $event5 = $subrecord->getEventtype5()->getId();
             $event6 = $subrecord->getEventtype6()->getId();
