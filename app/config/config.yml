@@ -75,3 +75,4 @@ swiftmailer:
     
 parameters:
     maximum_participants : 40
+    maximum_friday : 43

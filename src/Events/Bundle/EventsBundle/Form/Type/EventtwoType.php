@@ -84,7 +84,7 @@ class EventtwoType extends AbstractType {
         $builder->add('eventtype7','choice',array(
             'choices' => array('28' => 'Find a job in Asia/Gulf States/Oceania(Amphi 4)', 
                                '29' => 'Dual Degree Griffith College Dublin(IP12A)',
-                               '30' => 'Dual Degree UQAC(P06)',
+//                               '30' => 'Dual Degree UQAC(P06)',
                                '31' => 'Study Abroad Oxford Brookes(P05)',
                                '32'=> 'Dual Degree Stevens Institute of Technology(P07)'),
             'expanded' => true,

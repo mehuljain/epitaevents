@@ -308,7 +308,7 @@ class DefaultController extends Controller {
                 return array('form' => $form->createView());
             }
 
-            $max = $this->container->getParameter('maximum_participants');
+            $max = $this->container->getParameter('maximum_friday');
             //Now check for the participants limit
             $qb1 = $em->createQueryBuilder();
             $qb1->select('count(subscribed.id)');
