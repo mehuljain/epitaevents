@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Events for Friday - 4th April 2014{% endblock %}</title>
+        <title>{% block title %}Events for Friday - 27th March 2015{% endblock %}</title>
         {% block stylesheets %}
         <link href="{{ asset('bundles/eventsevents/css/style.css') }}" type="text/css" rel="stylesheet"/>
         {% endblock %}
@@ -13,10 +13,7 @@
             <p>Logged in as <b>{{ app.user.username }}</b>({{app.user.email}})<a style="padding-left: 50px;" href="{{path('fos_user_security_logout')}}">Logout</a></p>
               <div id="main">
 {% block content %}
-    <p>Please register for the events to be held on Friday, 4th April 2014. Please note the following:</p>
-    <ul>
-        <li>You will be allowed to register for maximum 3 events per day</li>
-    </ul>
+    <p>Please register for the events to be held on Friday, 27th March 2015.</p>    
     {% for flashMessage in app.session.flashbag.get('error') %}        
     <div class="flash-error">
         {{ flashMessage }}
@@ -85,30 +82,14 @@
                     <tr></tr>
                     <tr></tr>
                     <tr></tr>
-                    {# Event type 4 #}
-                    <tr>
-                        <td><div class="formlabelregister"><b>{{ form_label(form.eventtype8) }}</b></div></td>
-                        <tr>
-                            <table>
-                                {% for file in form.eventtype8.children %}                            
-                                    <tr>
-                                        <td>{{ form_widget(file)}}</td>
-                                        <td>{{(file.vars.label)}}</td>
-                                    </tr>                                
-                                {% endfor %}
-                            </table>
-                        </tr>
-                        <td><span class="errors">{{ form_errors(form.eventtype8) }}</span></td>
-                    </tr>                   
-            </table>            
+                </table>            
             <table>
                 <tbody>
                     <tr>
                         <td style="padding-left: 50px;padding-top: 10px;"><input type="submit" value="Submit" id="submit"></td>
                     </tr>
                 </tbody>
-            </table>
-            
+            </table>            
 {{ form_end(form) }}            
             </div>         
              </div>

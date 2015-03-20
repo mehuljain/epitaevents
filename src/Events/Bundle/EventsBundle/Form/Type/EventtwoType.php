@@ -54,13 +54,13 @@ class EventtwoType extends AbstractType {
        }
        //Eventtype5
         $builder->add('eventtype5','choice',array(
-            'choices' => array('20' => 'Study at California University(Amphi 4)', 
-                               '21' => 'International Mobility(IP12A)',
-                               '22' => 'How to work with India(P10)',
-                               '23' => 'VIE(P07)'),
+            'choices' => array('35' => 'Study Abroad Oxford Brookes', 
+                               '36' => 'Barclays, Singapore',
+                               '37' => 'Dual Degree Boston University',
+                               '38' => 'Dual Degree China'),
             'expanded' => true,
             'multiple' => false,
-            'label' => 'Workshop/Conference Events 1, Time 10 am - 11:30 am',
+            'label' => 'Workshop/Conference Events 1, Time 11:30 am - 1 pm',
             'required' => true,
             'empty_value' => 'None',        
             'data' =>  $eventtype5,
@@ -68,13 +68,14 @@ class EventtwoType extends AbstractType {
         
        //Eventtype6
         $builder->add('eventtype6','choice',array(
-            'choices' => array('24' => 'Find a job in Asia/Gulf States/Oceania(Amphi 4)', 
-                               '25' => 'International Mobility(IP12A)',
-                               '26' => 'How to work with India(P10)',
-                               '27' => 'VIE(P07)'),
+            'choices' => array('39' => 'Travaillez chez Amazon,NY,USA', 
+                               '40' => 'Find an internship in Asia/Gulf States/Oceania',
+                               '41' => 'How to work with India',
+                               '42' => 'Dual Degree Stevens'
+                ),
             'expanded' => true,
             'multiple' => false,
-            'label' => 'Workshop/Conference Events 2, Time 11:30 am - 1 pm',
+            'label' => 'Workshop/Conference Events 2, Time 2:30 pm - 4 pm',
             'required' => true,
             'empty_value' => 'None',
             'data' => $eventtype6,
@@ -82,35 +83,18 @@ class EventtwoType extends AbstractType {
         
        //Eventtype7
         $builder->add('eventtype7','choice',array(
-            'choices' => array('28' => 'Find a job in Asia/Gulf States/Oceania(Amphi 4)', 
-                               '29' => 'Dual Degree Griffith College Dublin(IP12A)',
-//                               '30' => 'Dual Degree UQAC(P06)',
-                               '31' => 'Study Abroad Oxford Brookes(P05)',
-                               '32'=> 'Dual Degree Stevens Institute of Technology(P07)'),
+            'choices' => array('43' => 'Study in Denmark-ITU', 
+                               '44' => 'Study in China - Northeastern University',
+                               '45' => 'Dual Degree Ireland',
+                               '46'=> 'CSUMB - Study Abroad California',
+                               '47'=> 'Work and Study in Quebec'),
             'expanded' => true,
             'multiple' => false,
-            'label' => 'Workshop/Conference Events 3, Time 2:30 pm - 4 pm',
+            'label' => 'Workshop/Conference Events 3, Time 4 pm - 5:30 pm',
             'required' => true,
             'empty_value' => 'None',
             'data' => $eventtype7,
         ));
-        
-       //Eventtype4
-        $builder->add('eventtype8','choice',array(
-            'choices' => array('33' => 'Study at Ahlia University(Amphi 4)', 
-                               '34' => 'The job market in Ireland Dublin(IP12A)',
-                               '35' => 'Exchange Bahcesehir Turkey(P06)',
-                               '36' => 'The job market in the US(P05)',
-                               '37'=> 'Dual Degree Beijing China(P07)'),
-            'expanded' => true,
-            'multiple' => false,
-            'label' => 'Workshop/Conference Events 3, Time 4 pm - 5:30pm',
-            'required' => true,
-            'empty_value' => 'None',
-            'data' => $eventtype8,
-        ));
-        
-     
         
     }
 

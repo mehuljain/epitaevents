@@ -93,6 +93,7 @@ class DefaultController extends Controller {
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository('EventsEventsBundle:User')->find($this->get('security.context')->getToken()->getUser()->getId());
 
+        
         if (!is_object($user) || !$user instanceof User) {
             throw new \Symfony\Component\HttpFoundation\File\Exception\AccessDeniedException('This user does not have access to this section.');
         }

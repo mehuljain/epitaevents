@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}EPITA International Week - 2014{% endblock %}</title>
+        <title>{% block title %}EPITA International Week - 2015{% endblock %}</title>
         {% block stylesheets %}
         <link href="{{ asset('bundles/eventsevents/css/style.css') }}" type="text/css" rel="stylesheet"/>
         {% endblock %}
@@ -11,14 +11,14 @@
     <body>
          {% block body %}            
             <p>Logged in as <b>{{ app.user.username }}</b>({{app.user.email}})<a style="padding-left: 50px;" href="{{path('fos_user_security_logout')}}">Logout</a></p>            
-            <p><b>EPITA International Week - 2014 Events Registration</b></p> 
+            <p><b>EPITA International Week - 2015 Events Registration</b></p> 
                 {% for flashMessage in app.session.flashbag.get('success') %}        
                     <div class="flash-success">
                         {{ flashMessage }}
                      </div>
                 {% endfor %}
-            <p><b>Register for events held on Thursday, 3rd April 2014</b>&nbsp;<a href="{{path('eventone')}}">Click here!</a></p>
-            <p><b>Register for events held on Friday, 4th April 2014</b>&nbsp;<a href="{{path('eventtwo')}}">Click here!</a></p>            
+            <p><b>Register for events held on Thursday, 26th March 2015</b>&nbsp;<a href="{{path('eventone')}}">Click here!</a></p>
+            <p><b>Register for events held on Friday, 27th March 2015</b>&nbsp;<a href="{{path('eventtwo')}}">Click here!</a></p>            
         {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

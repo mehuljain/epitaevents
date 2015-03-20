@@ -54,43 +54,54 @@ class EventoneType extends AbstractType {
        }
        //Eventtype1
         $builder->add('eventtype1','choice',array(
-            'choices' => array('1' => 'Ethiopian Food(P10)', 
-                               '2' => 'Ecuadorian Food(IP12B)',
-                               '3' => 'South Korean Food(P03)',
-                               '4' => 'Serbian Food(P04)'),
+            'choices' => array('1' => 'Calligraphy 1', 
+                               '2' => 'Dabke 1',
+                               '3' => 'Footloose 1',
+                               '4' => 'Spray Painting 1',
+                               '5' => 'Cricket 1',
+                               '6' => 'Kabbadi 1',
+                               '7' => 'Bingo 1',
+                ),
             'expanded' => true,
             'multiple' => false,
-            'label' => 'Cultural Events 1, Time 12 noon - 1 pm',
-            'required' => true,
-            'empty_value' => 'None',        
+            'label' => 'Cultural Events 1, Time 10 am - 11 am',
+            'required' => true,        
             'data' =>  $eventtype1,
         ));
         
        //Eventtype2
         $builder->add('eventtype2','choice',array(
-            'choices' => array('5' => 'Indian Food(P10)', 
-                               '6' => 'Finnish Food(IP12B)',
-                               '7' => 'Brazilian Food(P03)',
-                               '8' => 'Vietnamese Food(P04)',
-                               '9'=> 'Lebanese Food(P05)'),
+            'choices' => array('8' => 'Calligraphy 2', 
+                               '9' => 'Dabke 2',
+                               '10' => 'Footloose 2',
+                               '11' => 'Spray Painting 2',
+                               '12'=> 'Cricket 2',
+                               '13'=> 'Kabbadi 2',
+                               '14'=> 'Bingo 2'
+                ),
             'expanded' => true,
             'multiple' => false,
-            'label' => 'Cultural Events 2, Time 1 pm - 2 pm',
+            'label' => 'Cultural Events 2, Time 11 am - 12 noon',
             'required' => true,
-            'empty_value' => 'None',
             'data' => $eventtype2,
         ));
         
        //Eventtype3
         $builder->add('eventtype3','choice',array(
-            'choices' => array('10' => 'Game Bamboo Dance(P10)', 
-                               '11' => 'Painting on Eggs(IP12B)',
-                               '12' => 'Nigerian Music(P04)',
-                               '13' => 'Ecuador Story Telling(P03)',
-                               '14'=> 'Bingo Mexicano(P05)'),
+            'choices' => array('15' => 'American Food', 
+                               '16' => 'Korean Food',
+                               '17' => 'Greek Food',
+                               '18' => 'Lebanese Food',
+                               '19'=> 'Chinese Food',
+                               '20'=> 'Indian Food',
+                               '21'=> 'Pakistani Food',
+                               '22'=> 'Nigerian Food',
+                               '23'=> 'Mexican Food',
+                               '24'=> 'Argentinian Food',
+                ),
             'expanded' => true,
             'multiple' => false,
-            'label' => 'Cultural Events 3, Time 3 pm - 4 pm',
+            'label' => 'Cultural Events 3, Time 12 noon - 1 pm',
             'required' => true,
             'empty_value' => 'None',
             'data' => $eventtype3,
@@ -98,22 +109,26 @@ class EventoneType extends AbstractType {
         
        //Eventtype4
         $builder->add('eventtype4','choice',array(
-            'choices' => array('15' => 'Dabke Dance(P10)', 
-                               '16' => 'Calligraphy(IP12B)',
-                               '17' => 'Brazilian Music(P05)',
-                               '18' => 'Langori Indian Game(P04)',
-                               '19'=> 'Holi(P06)'),
+            'choices' => array('25' => 'American Food', 
+                               '26' => 'Korean Food',
+                               '27' => 'Greek Food',
+                               '28' => 'Lebanese Food',
+                               '29'=> 'Chinese Food',
+                               '30'=> 'Indian Food',
+                               '31'=> 'Pakistani Food',
+                               '32'=> 'Nigerian Food',
+                               '33'=> 'Mexican Food',
+                               '34'=> 'Argentinian Food',
+                ),
             'expanded' => true,
             'multiple' => false,
-            'label' => 'Cultural Events 4, Time 4 pm - 5 pm',
+            'label' => 'Cultural Events 4, Time 1 pm - 2 pm',
             'required' => true,
             'empty_value' => 'None',
             'data' => $eventtype4,
         ));
         
-     
-        
-    }
+ }
 
     public function getDefaultOptions(array $options) {
         return array('csrf_protection' => true);

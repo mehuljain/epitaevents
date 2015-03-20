@@ -1,4 +1,4 @@
-Name|Email|Thursday(12 noon - 1 pm)|Thursday(1 pm - 2 pm)|Thursday(3 pm - 4 pm)|Thursday(4 pm - 5 pm)|<br>
+Name|Email|Thursday(10 am - 11 am)|Thursday(11 am - 12 pm)|Thursday(1 2pm  - 1 pm)|Thursday(1 pm - 2 pm)|<br>
 {% for row in data %}
 {{row.user.name}} | {{row.user.email}} | {% if row.eventtype1 is null %} null {% else %} {{ row.eventtype1.description }} {% endif %}  | {% if row.eventtype2 is null %} {% else %} {{ row.eventtype2.description }} {% endif %}| {% if row.eventtype3 is null %} NULL {% else %} {{ row.eventtype3.description }} {% endif %} | {% if row.eventtype4 is null %} NULL {% else %} {{ row.eventtype4.description }} {% endif %}|<br>
 {% endfor %}

@@ -1,4 +1,4 @@
-Name|Email|Friday(10 am - 11:30 am)|Friday(11:30 am - 1 pm)|Friday(2:30 pm - 4 pm)|Friday(4 pm - 5:30 pm)|<br>
+Name|Email|Friday(11:30 am - 1 pm)|Friday(2:30 pm - 4 pm)|Friday(4 pm - 5:30 pm)|<br>
 {% for row in data %}
-{{row.user.name}} | {{row.user.email}} | {% if row.eventtype5 is null %} null {% else %} {{ row.eventtype5.description }} {% endif %}  | {% if row.eventtype6 is null %} {% else %} {{ row.eventtype6.description }} {% endif %}| {% if row.eventtype7 is null %} NULL {% else %} {{ row.eventtype7.description }} {% endif %} | {% if row.eventtype8 is null %} NULL {% else %} {{ row.eventtype8.description }} {% endif %}|<br>
+{{row.user.name}} | {{row.user.email}} | {% if row.eventtype5 is null %} null {% else %} {{ row.eventtype5.description }} {% endif %}  | {% if row.eventtype6 is null %} {% else %} {{ row.eventtype6.description }} {% endif %}| {% if row.eventtype7 is null %} NULL {% else %} {{ row.eventtype7.description }} {% endif %} |<br>
 {% endfor %}
