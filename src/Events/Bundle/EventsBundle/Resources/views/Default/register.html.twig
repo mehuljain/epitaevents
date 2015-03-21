@@ -14,9 +14,14 @@
         <table>       
                     {# Name #}
                     <tr>
-                        <td><div class="formlabelregister">{{ form_label(form.name) }}</div></td>
-                        <td>{{ form_widget(form.name) }}</td>
-                        <td><span class="errors">{{ form_errors(form.name) }}</span></td>
+                        <td><div class="formlabelregister">{{ form_label(form.firstname) }}</div></td>
+                        <td>{{ form_widget(form.firstname) }}</td>
+                        <td><span class="errors">{{ form_errors(form.firstname) }}</span></td>
+                    </tr>
+                    <tr>
+                        <td><div class="formlabelregister">{{ form_label(form.lastname) }}</div></td>
+                        <td>{{ form_widget(form.lastname) }}</td>
+                        <td><span class="errors">{{ form_errors(form.lastname) }}</span></td>
                     </tr>
                     {# Username #}
                     <tr>

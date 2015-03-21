@@ -12,17 +12,25 @@ class UserType extends AbstractType {
     
     public function buildForm(FormBuilderInterface $builder, array $options) {
         
-        //Name
-        $builder->add('name', 'text', array(
+        //First Name
+        $builder->add('firstname', 'text', array(
             'attr' => array('class' => 'large_text'),
-            'label' => 'Full Name',
+            'label' => 'First Name',
+            'required' => true,
+            'error_bubbling' => false
+        ));        
+        
+        //Last Name
+        $builder->add('lastname', 'text', array(
+            'attr' => array('class' => 'large_text'),
+            'label' => 'Family Name',
             'required' => true,
             'error_bubbling' => false
         ));        
              
         //Username
         $builder->add('username', 'text' , array(
-            'label' => 'Username',
+            'label' => 'EPITA Login',
             'required' => true,
             'error_bubbling' => false,
         ));

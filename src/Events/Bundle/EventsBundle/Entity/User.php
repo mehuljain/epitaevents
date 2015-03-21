@@ -15,7 +15,6 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @ORM\HasLifecycleCallbacks()  
  */
 class User extends BaseUser {
-    
 
     public function __construct() {
         parent::__construct();
@@ -37,7 +36,18 @@ class User extends BaseUser {
      *      match=false,
      *      message="Name should not contain numbers",groups={"registration"})
      */
-    public $name;    
+    public $firstname;
+
+    /**
+     * @ORM\Column(type="string", name="lastname", length=100)
+     * @Assert\NotBlank( message = "Name should not be blank",groups={"registration"})
+     * @Assert\Length(max=100,maxMessage="Name should be less than 100 characters",groups={"registration"})
+     * @Assert\Regex(
+     *      pattern="/\d/",
+     *      match=false,
+     *      message="Name should not contain numbers",groups={"registration"})
+     */
+    public $lastname;
 
     /**
      * @Assert\Email(message = "Email not valid",groups={"registration"})
@@ -46,7 +56,6 @@ class User extends BaseUser {
      */
     protected $email;
 
-   
     /**
      * 
      * @Assert\NotBlank( message = "Username should not be blank",groups={"registration"})
@@ -72,8 +81,7 @@ class User extends BaseUser {
     /**
      * @ORM\Column(type="datetime", name="modifiedon",nullable=true)
      */
-    public $modifiedon;    
-     
+    public $modifiedon;
 
     /**
      * Get id
@@ -84,25 +92,20 @@ class User extends BaseUser {
         return $this->id;
     }
 
-    /**
-     * Set firstname
-     *
-     * @param string $firstname
-     * @return Candidate
-     */
-    public function setName($firstname) {
-        $this->name = $firstname;
-
-        return $this;
+    public function getFirstname() {
+        return $this->firstname;
     }
 
-    /**
-     * Get firstname
-     *
-     * @return string 
-     */
-    public function getName() {
-        return $this->name;
+    public function setFirstname($firstname) {
+        $this->firstname = $firstname;
+    }
+
+    public function getLastname() {
+        return $this->lastname;
+    }
+
+    public function setLastname($lastname) {
+        $this->lastname = $lastname;
     }
 
     /**
@@ -126,7 +129,6 @@ class User extends BaseUser {
         return $this->email;
     }
 
- 
     /**
      * Set username
      *
@@ -169,8 +171,6 @@ class User extends BaseUser {
         return $this->plainPassword;
     }
 
- 
-
     /**
      * Set createdon
      *
@@ -192,7 +192,7 @@ class User extends BaseUser {
         return $this->createdon;
     }
 
-     /**
+    /**
      * Set modifiedon
      *
      * @param \DateTime $createdon
@@ -211,7 +211,6 @@ class User extends BaseUser {
      */
     public function getModifiedon() {
         return $this->modifiedon;
-    }   
-  
+    }
 
 }

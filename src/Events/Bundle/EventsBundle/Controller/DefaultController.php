@@ -128,26 +128,28 @@ class DefaultController extends Controller {
         if ($form->isSubmitted()) {
             //First check the value entered by the user
             if ($subscribed->getEventtype1() == null ||
-                    $subscribed->getEventtype2() == null) {
+                    $subscribed->getEventtype2() == null ||
+                    $subscribed->getEventtype3() == null
+            ) {
                 //User did not choose both the events
-                $this->container->get('session')->getFlashBag()->add('error', 'Oh oh! It is mandatory to choose to attend any two distinct events from 10 to 11 and 11 to 12.');
+                $this->container->get('session')->getFlashBag()->add('error', 'Oh oh! It is mandatory to choose an option for all the events');
                 return array('form' => $form->createView());
             }
-            
+
             //Identical events should not be selected
-            if(($subscribed->getEventtype1() == 1 && $subscribed->getEventtype2() == 8) || 
-               ($subscribed->getEventtype1() == 2 && $subscribed->getEventtype2() == 9) ||
-               ($subscribed->getEventtype1() == 3 && $subscribed->getEventtype2() == 10) ||
-               ($subscribed->getEventtype1() == 4 && $subscribed->getEventtype2() == 11) ||
-               ($subscribed->getEventtype1() == 5 && $subscribed->getEventtype2() == 12) ||
-               ($subscribed->getEventtype1() == 6 && $subscribed->getEventtype2() == 13) ||
-               ($subscribed->getEventtype1() == 7 && $subscribed->getEventtype2() == 14) 
-                    ){
+            if (($subscribed->getEventtype1() == 1 && $subscribed->getEventtype2() == 8) ||
+                    ($subscribed->getEventtype1() == 2 && $subscribed->getEventtype2() == 9) ||
+                    ($subscribed->getEventtype1() == 3 && $subscribed->getEventtype2() == 10) ||
+                    ($subscribed->getEventtype1() == 4 && $subscribed->getEventtype2() == 11) ||
+                    ($subscribed->getEventtype1() == 5 && $subscribed->getEventtype2() == 12) ||
+                    ($subscribed->getEventtype1() == 6 && $subscribed->getEventtype2() == 13) ||
+                    ($subscribed->getEventtype1() == 7 && $subscribed->getEventtype2() == 14)
+            ) {
                 //User chose identical events
                 $this->container->get('session')->getFlashBag()->add('error', 'Oh no! Not the same event twice. Please choose another event.');
                 return array('form' => $form->createView());
             }
-            
+
 
             $max = $this->container->getParameter('max_cultural');
             $maxfood = $this->container->getParameter('max_food');
@@ -225,7 +227,7 @@ class DefaultController extends Controller {
             $eventtype1 = $em->getRepository('EventsEventsBundle:Eventtype')->findOneBy(array('id' => $subscribed->getEventtype1()));
             $eventtype2 = $em->getRepository('EventsEventsBundle:Eventtype')->findOneBy(array('id' => $subscribed->getEventtype2()));
             $eventtype3 = $em->getRepository('EventsEventsBundle:Eventtype')->findOneBy(array('id' => $subscribed->getEventtype3()));
-            
+
             if (empty($sub)) {
                 $subscribed->setUser($user);
                 $subscribed->setEventtype1($eventtype1);
@@ -278,7 +280,7 @@ class DefaultController extends Controller {
         }
 
         $subrecord = $em->getRepository('EventsEventsBundle:Subscribed')->findOneBy(array('user' => $user->getId()));
-        
+
         if (!empty($subrecord)) {
             $exists = true;
             if ($subrecord->getEventtype5() != null || $subrecord->getEventtype5() != '') {
@@ -305,6 +307,15 @@ class DefaultController extends Controller {
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
+
+            if ($subscribed->getEventtype5() == null ||
+                    $subscribed->getEventtype6() == null ||
+                    $subscribed->getEventtype7() == null
+            ) {
+                //User did not choose both the events
+                $this->container->get('session')->getFlashBag()->add('error', 'Oh oh! It is mandatory to choose an option for all the events');
+                return array('form' => $form->createView());
+            }
 
             $maxconf1 = $this->container->getParameter('max_conf1');
             $maxconf2 = $this->container->getParameter('max_conf2');
@@ -373,7 +384,7 @@ class DefaultController extends Controller {
                     $this->container->get('session')->getFlashBag()->add('error', 'The registrations are full for the selected Workshop/Conference Events 3. Please choose another event');
                     return array('form' => $form->createView());
                 }
-            }  
+            }
         }
 
         if ($form->isValid()) {

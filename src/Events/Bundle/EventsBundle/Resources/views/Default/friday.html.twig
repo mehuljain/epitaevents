@@ -1,4 +1,4 @@
-Name|Email|Friday(11:30 am - 1 pm or 12 to 1:30 pm)|Friday(2:30 pm - 4 pm)|Friday(4 pm - 5:30 pm)|<br>
+First Name|Last Name| Epita Login |Email|Friday(11:30 am - 1 pm or 12 to 1:30 pm)|Friday(2:30 pm - 4 pm)|Friday(4 pm - 5:30 pm)|<br>
 {% for row in data %}
-{{row.user.name}} | {{row.user.email}} | {% if row.eventtype5 is null %} null {% else %} {{ row.eventtype5.description }} {% endif %}  | {% if row.eventtype6 is null %} {% else %} {{ row.eventtype6.description }} {% endif %}| {% if row.eventtype7 is null %} NULL {% else %} {{ row.eventtype7.description }} {% endif %} |<br>
+{{row.user.firstname}} |{{ row.user.lastname}}| {{row.user.username}} | {{row.user.email}} | {% if row.eventtype5 is null %} null {% else %} {{ row.eventtype5.description }} {% endif %}  | {% if row.eventtype6 is null %} {% else %} {{ row.eventtype6.description }} {% endif %}| {% if row.eventtype7 is null %} NULL {% else %} {{ row.eventtype7.description }} {% endif %} |<br>
 {% endfor %}

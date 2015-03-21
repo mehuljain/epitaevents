@@ -88,7 +88,6 @@ class EventoneType extends AbstractType {
             'multiple' => false,
             'label' => 'Food Tasting Event',
             'required' => true,
-            'empty_value' => 'None',
             'data' => $eventtype3,
         ));
          

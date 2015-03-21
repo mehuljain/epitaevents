@@ -55,7 +55,6 @@ class EventtwoType extends AbstractType {
             'multiple' => false,
             'label' => 'Workshop/Conference Events 1, Time 11:30 am - 1 pm',
             'required' => true,
-            'empty_value' => 'None',        
             'data' =>  $eventtype5,
         ));
         
@@ -70,7 +69,6 @@ class EventtwoType extends AbstractType {
             'multiple' => false,
             'label' => 'Workshop/Conference Events 2, Time 2:30 pm - 4 pm',
             'required' => true,
-            'empty_value' => 'None',
             'data' => $eventtype6,
         ));
         
@@ -85,7 +83,6 @@ class EventtwoType extends AbstractType {
             'multiple' => false,
             'label' => 'Workshop/Conference Events 3, Time 4 pm - 5:30 pm',
             'required' => true,
-            'empty_value' => 'None',
             'data' => $eventtype7,
         ));
         
