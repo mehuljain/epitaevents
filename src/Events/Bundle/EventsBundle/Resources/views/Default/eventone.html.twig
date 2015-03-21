@@ -22,7 +22,7 @@
     <div class="candidatecontent">            
     <div id="form">                         
      <br>
-    <form action="{{ path('eventone') }}" method="post" {{ form_enctype(form) }} name="user">
+     <form action="{{ path('eventone') }}" method="post" {{ form_enctype(form) }} name="user" novalidate="novalidate">
             <table>       
                     {# Event type 1 #}
                     <tr>
@@ -53,13 +53,7 @@
                     <tr></tr>
                     <tr></tr>
                     <tr></tr>
-                    <tr></tr>
-                    {# Event type 4 #}
-                    <tr>
-                        <td><div class="formlabelregister"><b>{{ form_label(form.eventtype4) }}</b></div></td>
-                        <td>{{ form_widget(form.eventtype4) }}</td>
-                        <td><span class="errors">{{ form_errors(form.eventtype4) }}</span></td>
-                    </tr>                   
+                    <tr></tr>             
             </table>            
             <table>
                 <tbody>

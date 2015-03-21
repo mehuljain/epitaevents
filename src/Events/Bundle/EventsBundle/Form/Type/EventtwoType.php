@@ -38,26 +38,19 @@ class EventtwoType extends AbstractType {
            }
            else {
                $eventtype7 = $this->subscribed->getEventtype7()->getId();
-           }
-           if($this->subscribed->getEventtype8() == null){
-                $eventtype8 = '';   
-           }
-           else {
-               $eventtype8 = $this->subscribed->getEventtype8()->getId();
-           }
+           }    
        }
        else {
            $eventtype5 = '';
            $eventtype6 = '';
            $eventtype7 = '';
-           $eventtype8 = '';
        }
        //Eventtype5
         $builder->add('eventtype5','choice',array(
-            'choices' => array('35' => 'Study Abroad Oxford Brookes', 
-                               '36' => 'Barclays, Singapore',
-                               '37' => 'Dual Degree Boston University',
-                               '38' => 'Dual Degree China'),
+            'choices' => array('17' => 'Study Abroad Oxford Brookes', 
+                               '18' => 'Barclays, Singapore(12 to 1:30 pm)',
+                               '19' => 'Dual Degree Boston University',
+                               '20' => 'Dual Degree China'),
             'expanded' => true,
             'multiple' => false,
             'label' => 'Workshop/Conference Events 1, Time 11:30 am - 1 pm',
@@ -68,10 +61,10 @@ class EventtwoType extends AbstractType {
         
        //Eventtype6
         $builder->add('eventtype6','choice',array(
-            'choices' => array('39' => 'Travaillez chez Amazon,NY,USA', 
-                               '40' => 'Find an internship in Asia/Gulf States/Oceania',
-                               '41' => 'How to work with India',
-                               '42' => 'Dual Degree Stevens'
+            'choices' => array('21' => 'Travaillez chez Amazon,NY,USA', 
+                               '22' => 'Find an internship in Asia/Gulf States/Oceania',
+                               '23' => 'How to work with India',
+                               '24' => 'Dual Degree Stevens'
                 ),
             'expanded' => true,
             'multiple' => false,
@@ -83,11 +76,11 @@ class EventtwoType extends AbstractType {
         
        //Eventtype7
         $builder->add('eventtype7','choice',array(
-            'choices' => array('43' => 'Study in Denmark-ITU', 
-                               '44' => 'Study in China - Northeastern University',
-                               '45' => 'Dual Degree Ireland',
-                               '46'=> 'CSUMB - Study Abroad California',
-                               '47'=> 'Work and Study in Quebec'),
+            'choices' => array('25' => 'Study in Denmark-ITU', 
+                               '26' => 'Study in China - Northeastern University',
+                               '27' => 'Dual Degree Ireland',
+                               '28'=> 'CSUMB - Study Abroad California',
+                               '29'=> 'Work and Study in Quebec'),
             'expanded' => true,
             'multiple' => false,
             'label' => 'Workshop/Conference Events 3, Time 4 pm - 5:30 pm',

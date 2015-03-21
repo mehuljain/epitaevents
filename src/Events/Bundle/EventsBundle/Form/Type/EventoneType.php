@@ -39,18 +39,11 @@ class EventoneType extends AbstractType {
            else {
                $eventtype3 = $this->subscribed->getEventtype3()->getId();
            }
-           if($this->subscribed->getEventtype4() == null){
-                $eventtype4 = '';   
-           }
-           else {
-               $eventtype4 = $this->subscribed->getEventtype4()->getId();
-           }
        }
        else {
            $eventtype1 = '';
            $eventtype2 = '';
            $eventtype3 = '';
-           $eventtype4 = '';
        }
        //Eventtype1
         $builder->add('eventtype1','choice',array(
@@ -88,46 +81,17 @@ class EventoneType extends AbstractType {
         
        //Eventtype3
         $builder->add('eventtype3','choice',array(
-            'choices' => array('15' => 'American Food', 
-                               '16' => 'Korean Food',
-                               '17' => 'Greek Food',
-                               '18' => 'Lebanese Food',
-                               '19'=> 'Chinese Food',
-                               '20'=> 'Indian Food',
-                               '21'=> 'Pakistani Food',
-                               '22'=> 'Nigerian Food',
-                               '23'=> 'Mexican Food',
-                               '24'=> 'Argentinian Food',
+            'choices' => array('15' => 'Food tasting from 12 to 1 pm(two tickets per person)', 
+                               '16' => 'Food tasting from 1 to 2 pm(two tickets per person)',
                 ),
             'expanded' => true,
             'multiple' => false,
-            'label' => 'Cultural Events 3, Time 12 noon - 1 pm',
+            'label' => 'Food Tasting Event',
             'required' => true,
             'empty_value' => 'None',
             'data' => $eventtype3,
         ));
-        
-       //Eventtype4
-        $builder->add('eventtype4','choice',array(
-            'choices' => array('25' => 'American Food', 
-                               '26' => 'Korean Food',
-                               '27' => 'Greek Food',
-                               '28' => 'Lebanese Food',
-                               '29'=> 'Chinese Food',
-                               '30'=> 'Indian Food',
-                               '31'=> 'Pakistani Food',
-                               '32'=> 'Nigerian Food',
-                               '33'=> 'Mexican Food',
-                               '34'=> 'Argentinian Food',
-                ),
-            'expanded' => true,
-            'multiple' => false,
-            'label' => 'Cultural Events 4, Time 1 pm - 2 pm',
-            'required' => true,
-            'empty_value' => 'None',
-            'data' => $eventtype4,
-        ));
-        
+         
  }
 
     public function getDefaultOptions(array $options) {

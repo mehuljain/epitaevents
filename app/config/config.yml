@@ -74,5 +74,8 @@ swiftmailer:
     spool:     { type: memory }
     
 parameters:
-    maximum_participants : 40
-    maximum_friday : 43
+    max_cultural : 35
+    max_food : 120
+    max_conf1 : 60
+    max_conf2 : 60
+    max_conf3 : 50
