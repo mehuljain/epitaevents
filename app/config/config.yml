@@ -48,6 +48,12 @@ assetic:
         #    jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar"
 
 # Doctrine Configuration
+
+services:
+    fos_user.doctrine_registry:
+        alias: doctrine
+        
+        
 doctrine:
     dbal:
         driver:   "%database_driver%"
@@ -74,8 +80,11 @@ swiftmailer:
     spool:     { type: memory }
     
 parameters:
-    max_cultural : 35
-    max_food : 120
+    max_cultural : 23
+    max_food : 80
+    max_conf : 54
+    max_uni : 54
+    max_uni2 : 80
     max_conf1 : 60
     max_conf2 : 60
     max_conf3 : 50

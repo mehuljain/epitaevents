@@ -72,6 +72,18 @@ class Subscribed {
      * 
      */
     private $eventtype8;
+    /**
+     * @ORM\ManyToOne(targetEntity="EventType")
+     * @ORM\JoinColumn(name="eventtype9", referencedColumnName="id")
+     * 
+     */
+    private $eventtype9;
+    /**
+     * @ORM\ManyToOne(targetEntity="EventType")
+     * @ORM\JoinColumn(name="eventtype10", referencedColumnName="id")
+     * 
+     */
+    private $eventtype10;
 
     /**
      * @ORM\ManyToOne(targetEntity="User")
@@ -137,6 +149,20 @@ class Subscribed {
 
     public function setEventtype8($eventype) {
         $this->eventtype8 = $eventype;
+    }
+    public function getEventtype9() {
+        return $this->eventtype9;
+    }
+
+    public function setEventtype9($eventype) {
+        $this->eventtype9 = $eventype;
+    }
+    public function getEventtype10() {
+        return $this->eventtype10;
+    }
+
+    public function setEventtype10($eventype) {
+        $this->eventtype10 = $eventype;
     }
 
     public function getUser() {

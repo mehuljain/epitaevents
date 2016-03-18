@@ -21,6 +21,12 @@ class EventtwoType extends AbstractType {
     public function buildForm(FormBuilderInterface $builder, array $options) {
         
        if (!empty($this->subscribed)){
+           if($this->subscribed->getEventtype4() == null){
+                $eventtype4 = '';   
+           }
+           else {
+               $eventtype4 = $this->subscribed->getEventtype4()->getId();
+           }
            if($this->subscribed->getEventtype5() == null){
                 $eventtype5 = '';   
            }
@@ -41,47 +47,57 @@ class EventtwoType extends AbstractType {
            }    
        }
        else {
+           $eventtype4 = '';
            $eventtype5 = '';
            $eventtype6 = '';
            $eventtype7 = '';
        }
-       //Eventtype5
-        $builder->add('eventtype5','choice',array(
-            'choices' => array('17' => 'Study Abroad Oxford Brookes', 
-                               '18' => 'Barclays, Singapore(12 to 1:30 pm)',
-                               '19' => 'Dual Degree Boston University',
-                               '20' => 'Dual Degree China'),
+       //Eventtype4
+        $builder->add('eventtype4','choice',array(
+            'choices' => array('17' => 'Mobilité Internationale Contextes Interculturels 1', 
+                               '18' => 'L’interculturalité sans risques 1',
+                               '19' => 'Travailler à Hong Kong',        
+                               '34' => 'None of the above'),                
             'expanded' => true,
             'multiple' => false,
-            'label' => 'Workshop/Conference Events 1, Time 11:30 am - 1 pm',
+            'label' => 'Workshop/Conference Events 1, Time 9:30-11am/10-11:30am',
+            'required' => true,
+            'data' =>  $eventtype4,           
+        ));
+       //Eventtype5
+        $builder->add('eventtype5','choice',array(
+            'choices' => array('20' => 'Mobilité Internationale Contextes Interculturels 2', 
+                               '21' => 'L’interculturalité sans risques 2',
+                               '34'=> 'None of the above'),
+            'expanded' => true,
+            'multiple' => false,
+            'label' => 'Workshop/Conference Events 1, Time 11 am - 12:30 pm',
             'required' => true,
             'data' =>  $eventtype5,
         ));
         
        //Eventtype6
         $builder->add('eventtype6','choice',array(
-            'choices' => array('21' => 'Travaillez chez Amazon,NY,USA', 
-                               '22' => 'Find an internship in Asia/Gulf States/Oceania',
-                               '23' => 'How to work with India',
-                               '24' => 'Dual Degree Stevens'
+            'choices' => array('22' => 'Find an internship in Asia/States of the Gulf/Oceania 1', 
+                               '23' => 'Dual degrees: a real asset ? 1',
+                               '34' => 'None of the above'
                 ),
             'expanded' => true,
             'multiple' => false,
-            'label' => 'Workshop/Conference Events 2, Time 2:30 pm - 4 pm',
+            'label' => 'Workshop/Conference Events 2, 2 pm – 3:30 pm/ 2 pm- 3pm',
             'required' => true,
             'data' => $eventtype6,
         ));
         
        //Eventtype7
         $builder->add('eventtype7','choice',array(
-            'choices' => array('25' => 'Study in Denmark-ITU', 
-                               '26' => 'Study in China - Northeastern University',
-                               '27' => 'Dual Degree Ireland',
-                               '28'=> 'CSUMB - Study Abroad California',
-                               '29'=> 'Work and Study in Quebec'),
+            'choices' => array('24' => 'Find an internship in Asia/States of the Gulf/Oceania 2', 
+                               '25' => 'Dual degrees: a real asset ? 2',
+                               '34' => 'None of the above'
+                               ),
             'expanded' => true,
             'multiple' => false,
-            'label' => 'Workshop/Conference Events 3, Time 4 pm - 5:30 pm',
+            'label' => 'Workshop/Conference Events 3, 3:30 – 5 pm / 3 pm – 4 pm',
             'required' => true,
             'data' => $eventtype7,
         ));
